@@ -1,0 +1,250 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* ---------------------------------------------------------------
+   Root theme variables
+   --------------------------------------------------------------- */
+:root {
+  --ifm-color-primary: #10162F;
+  --ifm-color-primary-dark: #0E1329;
+  /* 10% darker */
+  --ifm-color-primary-darker: #0B1021;
+  /* 15% darker */
+  --ifm-color-primary-darkest: #08101A;
+  /* 30% darker */
+  --ifm-color-primary-light: #141835;
+  /* 10% lighter */
+  --ifm-color-primary-lighter: #181D3C;
+  /* 20% lighter */
+  --ifm-color-primary-lightest: #1F2350;
+  /* 30% lighter */
+  --ifm-background-color: #FEF1E5;
+  --ifm-heading-color: #FEF1E5;
+  --ifm-hero-text-color: #FEF1E5;
+  --ifm-navbar-link-color: #141835;
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* ---------------------------------------------------------------
+   Navbar + links
+   --------------------------------------------------------------- */
+.navbar {
+  background-color: var(--ifm-background-color);
+  box-shadow: var(--ifm-navbar-shadow);
+  display: flex;
+  height: var(--ifm-navbar-height);
+  padding: var(--ifm-navbar-padding-vertical) var(--ifm-navbar-padding-horizontal) 1rem;
+}
+
+a {
+  text-decoration: underline;
+}
+
+/* 1. Base Font Size (Optional but recommended for consistency)
+  Setting a base font size on the root element. 
+*/
+:root {
+  /* 16px is the default, but explicitly setting it helps */
+  font-size: 100%;
+}
+
+/* 2. Paragraph and Normal Text 
+  This is the size that your bold text will use.
+*/
+p,
+body {
+  font-size: 1rem;
+  /* 16px */
+  line-height: 1.5;
+  color: #10162F;
+}
+
+/* 3. Heading Scale (h1 through h5)
+  These sizes are based on a consistent visual progression.
+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #141835;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+h5 {
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* 4. Ensuring Bold Text is the Constraint */
+p strong {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* ---------------------------------------------------------------
+   Code block wrapping
+   --------------------------------------------------------------- */
+pre code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* ---------------------------------------------------------------
+   Global table + image consistency
+   --------------------------------------------------------------- */
+.markdown table {
+  width: 100%;
+  display: table;
+}
+
+.markdown img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ---------------------------------------------------------------
+   Blockquote / callout styling
+   --------------------------------------------------------------- */
+.markdown blockquote {
+  border-left: 4px solid var(--ifm-color-primary);
+  padding: 0.5rem 1rem;
+  background: var(--ifm-background-surface-color);
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* ---------------------------------------------------------------
+   Answer accordion (global)
+   --------------------------------------------------------------- */
+.answer-accordion {
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 12px;
+  background: var(--ifm-background-surface-color);
+  padding: 0.25rem 0.75rem;
+  margin: 1rem 0;
+  transition: box-shadow 0.2s ease;
+}
+
+.answer-accordion[open] {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Summary row */
+.answer-accordion>summary {
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.answer-accordion>summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Chevron indicator */
+.answer-accordion>summary::before {
+  content: "▸";
+  display: inline-block;
+  transform-origin: center;
+  transition: transform 0.2s ease;
+}
+
+.answer-accordion[open]>summary::before {
+  transform: rotate(90deg);
+}
+
+/* Content spacing */
+.answer-accordion .answer-accordion__content {
+  padding: 0.5rem 0 0 0;
+}
+
+.answer-accordion table {
+  margin: 0.5rem 0;
+}
+
+/* Keyboard focus */
+.answer-accordion>summary:focus {
+  outline: 2px solid var(--ifm-color-primary-lightest);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* Dark mode tweaks */
+[data-theme='dark'] .answer-accordion {
+  background: var(--ifm-background-color);
+  border-color: var(--ifm-color-primary-light);
+}
+
+[data-theme='dark'] .answer-accordion>summary:focus {
+  outline-color: var(--ifm-color-primary-light);
+}
+
+.hero__subtitle {
+  color: #FEF1E5;
+}
+
+.navbar__link {
+  color: #141835;
+}
+
+.hero__title {
+  color: #FEF1E5;
+}
+
+.menu__link {
+  color: #0E1329;
+  text-decoration: none;
+}
+
+/* Hover state */
+.menu__link:hover {
+  color: #181D3C;
+}
+
+/* Active link (current page) */
+.menu__link--active,
+.menu__link--active:hover {
+  color: #10162F;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.card {
+  background-color: aliceblue;
+}
