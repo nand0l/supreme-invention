@@ -1,0 +1,62 @@
+@import "colors.css";
+
+#intro {
+  height: calc(100vh - 10px);
+  width: 100vw;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+.photo {
+  position: absolute;
+  object-fit: cover;
+  height: 80%;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+.intro-content {
+  height: 100vh;
+  width: 100vw;
+  padding: 12rem 1rem;
+  font-size: 3rem;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+}
+.intro-content_title {
+  /* .intro-content_title */
+  font-size: 1.75rem;
+  font-weight: 100;
+}
+.intro-content_name {
+  /* .intro-content_name */
+  color: var(--aii-orange);
+}
+.intro-content_text {
+  font-size: medium;
+  font-weight: 100;
+  width: 45vw;
+  /* .intro-content_text */
+}
+
+@media screen and (max-width: 480px) {
+  .intro-content {
+    margin-top: 2rem;
+    padding: 4rem 1rem;
+    font-size: 1.7rem;
+  }
+  .intro-content_text {
+    width: 100%;
+  }
+  .photo {
+    height: 60%;
+    right: -20%;
+    bottom: -5%;
+  }
+  .intro-content_text {
+    font-size: 1.2rem;
+    font-weight: 100;
+    /* .intro-content_text */
+  }
+}

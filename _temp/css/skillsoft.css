@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Spectral:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap");
+@import 'root.css';
+body {
+  color: var(--c-navy);
+  font-weight: 600;
+  line-height: 1;
+  text-align: left;
+  font-size: 100%;
+}
+p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0 0 2em;
+  padding: 0;
+}
+
+

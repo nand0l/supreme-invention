@@ -1,0 +1,339 @@
+@import url("https://fonts.cdnfonts.com/css/amazon-ember");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --background-color: grey;
+  --default-color: #686868;
+  --white-color: #f2f2f2;
+  --code-color: #444444;
+  --silver: #cccccc;
+  --aii-orange: #ffa500;
+  --aii-orange-light: #ffcc80;
+  --aii-orange-dark: #ff9100;
+  --aii-orange-fresh: #e69600;
+  --california: #f69804;
+  --himalaya: #74541e;
+  --mirage: #1c2434;
+  --kumera: #8c641c;
+  --lisbon-brown: #493e27;
+  --hawaiian-tan: #9a6414;
+  --heavy-metal: #30342c;
+  --outer-space: #2a2c2c;
+  --ebony-clay: #242c34;
+}
+
+
+
+
+body {
+  font-family: "Amazon Ember", sans-serif;
+  /* https://www.cdnfonts.com/amazon-ember.font */
+  color: var(--silver);
+  text-align: left;
+  background-color: grey;
+  background: linear-gradient(to bottom,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(0, 0, 0, 0.15) 100%),
+    radial-gradient(at top center,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(0, 0, 0, 0.4) 120%) #989898;
+  background-blend-mode: multiply, multiply;
+}
+
+p {
+  padding-top: 1rem;
+}
+
+a:link {
+  text-decoration: none;
+  color: #e69600;
+}
+
+a:visited {
+  text-decoration: none;
+  color: orange;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: orange;
+}
+
+a:active {
+  text-decoration: underline;
+  color: orange;
+}
+
+hr {
+  border: 3px solid var(--silver);
+  max-width: 98vw;
+  margin-right: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--aii-orange-dark);
+}
+
+.container {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.container-fully {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.screenshot {
+  padding: 2em;
+  max-width: 65vw;
+  margin: auto auto;
+}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.rotated45 {
+  transform: rotate(45deg);
+}
+
+.rotaded315 {
+  transform: rotate(315deg);
+}
+
+li.no-bullets {
+  list-style-type: none;
+  /* Remove bullets */
+  padding: 0;
+  /* Remove padding */
+  margin: 0;
+  /* Remove margins */
+}
+
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+#BackBtn {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 20px;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
+  border: none;
+  /* Remove borders */
+  outline: none;
+  /* Remove outline */
+  background-color: #ffa500;
+  /* Set a background color */
+  color: white;
+  /* Text color */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  padding: 15px;
+  /* Some padding */
+  border-radius: 10px;
+  /* Rounded corners */
+  font-size: 18px;
+  /* Increase font size */
+}
+
+#BackBtn:hover {
+  background-color: #555;
+  /* Add a dark-grey background on hover */
+}
+
+#preview {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#img_container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+pre,
+code {
+  color: #e5e5e5;
+  background: #000;
+}
+
+code span {
+  color: #e83e8c;
+}
+
+.codehilite {
+  margin-top: 20px;
+}
+
+
+audio {
+  filter: sepia(10%) saturate(20%) grayscale(0) contrast(99%) invert(12%);
+  width: 300px;
+  height: 40px;
+}
+
+.ml-auto,
+mx-auto {
+  margin-left: auto !important;
+}
+
+.btn {
+  color: #989898;
+  display: block;
+  padding: 3px 20px;
+  margin: 10px auto;
+  outline: none;
+  border: none;
+  background: orange;
+  font-size: 20px;
+  font-weight: bold;
+  color: #232425 !important;
+  cursor: pointer;
+  width: 240px;
+}
+
+.btn-small {
+  display: block;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background: orange;
+  font-size: 20px;
+  font-weight: bold;
+  color: #232425 !important;
+  cursor: pointer;
+  width: 120px;
+}
+
+.input {
+  display: block;
+  padding: 3px 20px;
+  margin: 10px auto;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: #232425 !important;
+  text-align: center;
+  width: 240px;
+}
+
+.output {
+  display: block;
+  padding: 3px 20px;
+  margin: 10px auto;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  color: #232425 !important;
+  width: 240px;
+}
+
+.wrapper {
+  display: grid;
+  grid-gap: 5px;
+
+}
+
+.box {
+  max-width: 95%;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  /* Vertical centering */
+
+}
+
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  justify-content: center;
+}
+
+.active,
+.accordion:hover {
+  background-color: #ccc;
+}
+
+.accordion:after {
+  content: "\002B";
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  color: #777;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  font-size: 1rem;
+  max-width: 95%;
+}
+
+button.accordion {
+  font-size: 1rem;
+  max-width: 95%;
+}
+
+p.accordion {
+  max-width: 95%;
+}
+
+@media screen and (max-width: 600px) {
+  .active:after {
+    content: "\2212";
+  }
+}

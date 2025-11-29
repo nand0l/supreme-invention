@@ -1,0 +1,345 @@
+[
+    {
+        "CorrectAnswerIndices": [
+            0
+        ],
+        "Identifier": "Question 1",
+        "ExamID": "SAP-C09",
+        "Explanation": "Kinesis Data Streams is designed for real-time streaming data ingestion, making it ideal for IoT scenarios. AWS Glue is used for ETL (Extract, Transform, Load), while Redshift and RDS are more for structured data storage.",
+        "Options": [
+            "A. Amazon Kinesis Data Streams",
+            "B. AWS Glue",
+            "C. Amazon Redshift",
+            "D. Amazon RDS"
+        ],
+        "QuestionText": "Which AWS service is best suited for real-time data ingestion from IoT devices? ",
+        "QuestionID": "1"
+    },
+    {
+        "CorrectAnswerIndices": [
+            2,
+            3
+        ],
+        "Identifier": "Question 854",
+        "ExamID": "SAP-C09",
+        "Explanation": "In this case the answers are:\n **C. Host the web application in Amazon S3. Store the uploaded videos in Amazon S3. Use S3 event notification to publish events to the SQS queue. Process the SQS queue with an AWS Lambda function that calls the Amazon Rekognition API to categorize the videos.**\n **D. Use AWS Elastic Beanstalk to launch EC2 instances in an Auto Scaling group for the web application and launch a worker environment to process the SQS queue. Replace the custom software with Amazon Rekognition to categorize the videos.**\nHosting the web application in Amazon S3 and using S3 event notifications with AWS Lambda to process videos reduces operational overhead and leverages AWS managed services. AWS Elastic Beanstalk simplifies application deployment and scaling, while using Amazon Rekognition eliminates the need for custom software.",
+        "Options": [
+            "A. Use Amazon ECS containers for the web application and Spot instances for the Auto Scaling group that processes the SQS queue. Replace the custom software with Amazon Rekognition to categorize the videos.",
+            "B. Store the uploaded videos in Amazon EFS and mount the file system to the EC2 instances for the web application. Process the SQS queue with an AWS Lambda function that calls the Amazon Rekognition API to categorize the videos.",
+            "C. Host the web application in Amazon S3. Store the uploaded videos in Amazon S3. Use S3 event notification to publish events to the SQS queue. Process the SQS queue with an AWS Lambda function that calls the Amazon Rekognition API to categorize the videos.",
+            "D. Use AWS Elastic Beanstalk to launch EC2 instances in an Auto Scaling group for the web application and launch a worker environment to process the SQS queue. Replace the custom software with Amazon Rekognition to categorize the videos."
+        ],
+        "QuestionText": "A company has a web application that allows users to upload short videos. The videos are stored on Amazon EBS volumes and analyzed by custom recognition software for categorization. The website contains static content that has variable traffic with peaks in certain months. The architecture consists of Amazon EC2 instances running in an Auto Scaling group for the web application and EC2 instances running in an Auto Scaling group to process an Amazon SQS queue. The company wants to re-architect the application to reduce operational overhead using AWS managed services where possible and remove dependencies on third-party software. Which solution meets these requirements? (Choose2)",
+        "QuestionID": "1506"
+    },
+    {
+        "CorrectAnswerIndices": [
+            2,
+            3
+        ],
+        "Identifier": "Question 854",
+        "ExamID": "SAP-C09",
+        "Explanation": "**B.**\nDeploy a new API Gateway API and Lambda functions in another Region. Change the Route 53 DNS record to a multivalue answer. Add both API Gateway APIs to the answer. Enable target health monitoring. Convert the DynamoDB tables to global tables.\n**C.**\nDeploy a new API Gateway API and Lambda functions in another Region. Change the Route 53 DNS record to a failover record. Enable target health monitoring. Convert the DynamoDB tables to global tables.\n\nBoth options **B** and **C** provide a suitable failover mechanism by deploying resources in another region and using Route 53's DNS failover capabilities. Option A does not provide a proper failover mechanism as it uses edge-optimized endpoints which are not designed for regional failover. Option D is incorrect because Lambda functions cannot be made global; they need to be deployed in each region where they are required.",
+        "Options": [
+            "A. Deploy a new set of Lambda functions in a new Region. Update the API Gateway API to use an edge-optimized API endpoint with Lambda functions from both Regions as targets. Convert the DynamoDB tables to global tables.",
+            "B. Deploy a new API Gateway API and Lambda functions in another Region. Change the Route 53 DNS record to a multivalue answer. Add both API Gateway APIs to the answer. Enable target health monitoring. Convert the DynamoDB tables to global tables.",
+            "C. Deploy a new API Gateway API and Lambda functions in another Region. Change the Route 53 DNS record to a failover record. Enable target health monitoring. Convert the DynamoDB tables to global tables.",
+            "D. Deploy a new API Gateway API in a new Region. Change the Lambda functions to global functions. Change the Route 53 DNS record to a multivalue answer. Add both API Gateway APIs to the answer. Enable target health monitoring. Convert the DynamoDB tables to global tables.",
+            "Onboarding OU to allow AWS Config actions. Move the organization\u2019s root SCP to the Production OU. Move the new account to the Production OU when adjustments to AWS Config are complete."
+        ],
+        "QuestionText": "A company is providing weather data over a REST-based API to several customers. The API is hosted by Amazon API Gateway and is integrated with different AWS Lambda functions for each API operation. The company uses Amazon Route 53 for DNS and has created a resource record of weather.example.com. The company stores data for the API in Amazon DynamoDB tables. The company needs a solution that will give the API the ability to fail over to a different AWS Region. Which solution will meet these requirements? (Choose 2)",
+        "QuestionID": "151"
+    },
+    {
+        "CorrectAnswerIndices": [
+            2,
+            4
+        ],
+        "Identifier": "Question 847",
+        "ExamID": "SAP-C09",
+        "Explanation": "In this case the answers are:\n **C. Create an authorization to associate the private hosted zone in Account A with the new VPC in Account B.**\n **E. Associate a new VPC in Account B with a hosted zone in Account A. Delete the association authorization in Account A.**\nTo resolve DNS resolution issues across multiple AWS accounts, you need to associate the private hosted zone in Account A with the VPC in Account B. This is done by creating an authorization in Account A and then associating the VPC in Account B with the hosted zone. Afterward, the association authorization in Account A can be deleted if it's no longer needed. Deploying the database on a separate EC2 instance (A) or manually adding an RDS endpoint IP to the /etc/resolv.conf file (B) are not standard practices for resolving DNS issues in a multi-account setup. Creating a new private hosted zone in Account B (D) would not solve the cross-account DNS resolution problem.",
+        "Options": [
+            "A. Deploy the database on a separate EC2 instance in the new VPC. Create a record set for the instance\u2019s private IP in the private hosted zone.",
+            "B. Use SSH to connect to the application tier EC2 instance. Add an RDS endpoint IP address to the /etc/resolv.conf file.",
+            "C. Create an authorization to associate the private hosted zone in Account A with the new VPC in Account B.",
+            "D. Create a private hosted zone for the example com domain in Account B. Configure Route 53 replication between AWS accounts.",
+            "E. Associate a new VPC in Account B with a hosted zone in Account A. Delete the association authorization in Account A."
+        ],
+        "QuestionText": "A company is using multiple AWS accounts. The DNS records are stored in a private hosted zone for Amazon Route 53 in Account A. The company\u2019s applications and databases are running in Account B. \n\nA solutions architect will deploy a two-tier application in a new VPC. To simplify the configuration, the db.example.com CNAME record set for the Amazon RDS endpoint was created in a private hosted zone for Amazon Route 53. \n\nDuring deployment, the application failed to start. Troubleshooting revealed that db.example.com is not resolvable on the Amazon EC2 instance. The solutions architect confirmed that the record set was created correctly in Route 53. \n\nWhich combination of steps should the solutions architect take to resolve this issue? (Choose two.) \nA. Deploy the database on a separate EC2 instance in the new VPC. Create a record set for the instance\u2019s private IP in the private hosted zone. \nB. Use SSH to connect to the application tier EC2 instance. Add an RDS endpoint IP address to the /etc/resolv.conf file. \nC. Create an authorization to associate the private hosted zone in Account A with the new VPC in Account B. \nD. Create a private hosted zone for the example com domain in Account B. Configure Route 53 replication between AWS accounts. \nE. Associate a new VPC in Account B with a hosted zone in Account A. Delete the association authorization in Account A.",
+        "QuestionID": "1581"
+    },
+    {
+        "CorrectAnswerIndices": [
+            1
+        ],
+        "Identifier": "Question 873",
+        "ExamID": "SAP-C09",
+        "Explanation": "To reduce the RTO to less than 15 minutes with automatic failover to the backup Region without using an active-active strategy, the best approach is to use a failover routing policy in Route 53. Option B is correct because it involves creating a Lambda function to handle the failover process, setting up a health check in Route 53 to monitor the application's health, and configuring a failover routing policy to redirect traffic to the backup Region when the primary Region becomes unhealthy. This setup ensures that the application can automatically fail over to the backup Region in case of an issue, meeting the RTO requirement.",
+        "Options": [
+            "A. Reconfigure the application\u2019s Route 53 record with a latency-based routing policy that load balances traffic between the two ALBs. Create an AWS Lambda function in the backup Region to promote the read replica and modify the Auto Scaling group values. Create an Amazon CloudWatch alarm that is based on the HTTPCode_Target_5XX_Count metric for the ALB in the primary Region. Configure the CloudWatch alarm to invoke the Lambda function.",
+            "B. Create an AWS Lambda function in the backup Region to promote the read replica and modify the Auto Scaling group values. Configure Route 53 with a health check that monitors the web application and sends an Amazon Simple Notification Service (Amazon SNS) notification to the Lambda function when the health check status is unhealthy. Update the application\u2019s Route 53 record with a failover policy that routes traffic to the ALB in the backup Region when a health check failure occurs.",
+            "C. Configure the Auto Scaling group in the backup Region to have the same values as the Auto Scaling group in the primary Region. Reconfigure the application\u2019s Route 53 record with a latency-based routing policy that load balances traffic between the two ALBs. Remove the read replica. Replace the read replica with a standalone RDS DB instance. Configure CrossRegion Replication between the RDS DB instances by using snapshots and Amazon S3.",
+            "D. Configure an endpoint in AWS Global Accelerator with the two ALBs as equal weighted targets. Create an AWS Lambda function in the backup Region to promote the read replica and modify the Auto Scaling group values. Create an Amazon CloudWatch alarm that is based on the HTTPCode_Target_5XX_Count metric for the ALB in the primary Region. Configure the CloudWatch alarm to invoke the Lambda function."
+        ],
+        "QuestionText": "A company has a multi-tier web application that runs on a fleet of Amazon EC2 instances behind an Application Load Balancer (ALB). The instances are in an Auto Scaling group. The ALB and the Auto Scaling group are replicated in a backup AWS Region. The minimum value and the maximum value for the Auto Scaling group are set to zero. An Amazon RDS Multi-AZ DB instance stores the application\u2019s data. The DB instance has a read replica in the backup Region. The application presents an endpoint to end users by using an Amazon Route 53 record.\n\nThe company needs to reduce its RTO to less than 15 minutes by giving the application the ability to automatically fail over to the backup Region. The company does not have a large enough budget for an active-active strategy.\n\nWhat should a solutions architect recommend to meet these requirements?",
+        "QuestionID": "2827"
+    },
+    {
+        "CorrectAnswerIndices": [
+            0,
+            3
+        ],
+        "Identifier": "Question 854",
+        "ExamID": "SAP-C09",
+        "Explanation": "In this case the answers are:\n **A. Create an Amazon S3 bucket. Configure the S3 bucket to use the S3 One Zone-Infrequent Access (S3 One Zone-IA) storage class as default. Configure the S3 bucket for website hosting. Create an S3 interface endpoint. Configure the S3 bucket to allow access only through that endpoint.**\n **D. Create an Amazon S3 bucket. Configure the S3 bucket to use the S3 Glacier Deep Archive storage class as default. Configure the S3 bucket for website hosting. Create an S3 interface endpoint. Configure the S3 bucket to allow access only through that endpoint.**\nS3 One Zone-IA is a low-cost storage class for infrequently accessed data, suitable for non-critical data. S3 Glacier Deep Archive is the lowest-cost storage class, designed for data that is rarely accessed and can afford retrieval times measured in hours. Both options ensure data is not publicly accessible by configuring the S3 bucket to allow access only through an S3 interface endpoint. EC2 with EFS or EBS would be more expensive and complex to manage compared to S3 solutions.",
+        "Options": [
+            "A. Create an Amazon S3 bucket. Configure the S3 bucket to use the S3 One Zone-Infrequent Access (S3 One Zone-IA) storage class as default. Configure the S3 bucket for website hosting. Create an S3 interface endpoint. Configure the S3 bucket to allow access only through that endpoint.",
+            "B. Launch an Amazon EC2 instance that runs a web server. Attach an Amazon Elastic File System (Amazon EFS) file system to store the archived data in the EFS One Zone-Infrequent Access (EFS One Zone-IA) storage class Configure the instance security groups to allow access only from private networks.",
+            "C. Launch an Amazon EC2 instance that runs a web server Attach an Amazon Elastic Block Store (Amazon EBS) volume to store the archived data. Use the Cold HDD (sc1) volume type. Configure the instance security groups to allow access only from private networks.",
+            "D. Create an Amazon S3 bucket. Configure the S3 bucket to use the S3 Glacier Deep Archive storage class as default. Configure the S3 bucket for website hosting. Create an S3 interface endpoint. Configure the S3 bucket to allow access only through that endpoint."
+        ],
+        "QuestionText": "A company is planning to store a large number of archived documents and make the documents available to employees through the corporate intranet. Employees will access the system by connecting through a client VPN service that is attached to a VPC. The data must not be accessible to the public. The documents that the company is storing are copies of data that is held on physical media elsewhere. The number of requests will be low. Availability and speed of retrieval are not concerns of the company. Which solution will meet these requirements at the LOWEST cost?",
+        "QuestionID": "2920"
+    },
+    {
+        "CorrectAnswerIndices": [
+            2,
+            3
+        ],
+        "Identifier": "Question 847",
+        "ExamID": "SAP-C09",
+        "Explanation": "In this case, the answers are:\n **C. Configure an Amazon CloudFront distribution. Point the distribution to an S3 bucket, and migrate the videos from EFS to Amazon S3.**\n **D. Set up an Amazon CloudFront distribution for all site contents, and point the distribution at the ALB.**\nAmazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency and high transfer speeds. Using CloudFront with Amazon S3 for video storage and delivery (C) and for all site content via the ALB (D) ensures scalability and cost-efficiency. Reconfiguring Amazon EFS (A) does not address the scalability issue for high traffic, and using instance store volumes (B) is not a scalable solution for storage.",
+        "Options": [
+            "A. Reconfigure Amazon EFS to enable maximum I/O.",
+            "B. Update the blog site to use instance store volumes for storage. Copy the site contents to the volumes at launch and to Amazon S3 at shutdown.",
+            "C. Configure an Amazon CloudFront distribution. Point the distribution to an S3 bucket, and migrate the videos from EFS to Amazon S3.",
+            "D. Set up an Amazon CloudFront distribution for all site contents, and point the distribution at the ALB."
+        ],
+        "QuestionText": "A company used Amazon EC2 instances to deploy a web fleet to host a blog site. The EC2 instances are behind an Application Load Balancer (ALB) and are configured in an Auto Scaling group. The web application stores all blog content on an Amazon EFS volume. \n\nThe company recently added a feature for bloggers to add video to their posts, attracting 10 times the previous user traffic. At peak times of day, users report buffering and timeout issues while attempting to reach the site or watch videos. \n\nWhich is the MOST cost-efficient and scalable deployment that will resolve the issues for users? ",
+        "QuestionID": "2974"
+    },
+    {
+        "CorrectAnswerIndices": [
+            2,
+            3
+        ],
+        "Identifier": "Question 302",
+        "ExamID": "SAP-C09",
+        "Explanation": "\u2705\n\n **C. Use the AWS Schema Conversion Tool (AWS SCT) to analyze the source databases for changes that are required.**\n\n **D. Use AWS Database Migration Service (AWS DMS) to migrate the source databases to Amazon RDS.**\n\n AWS Schema Conversion Tool (SCT) analyzes source databases and converts schema, functions, and stored procedures to be compatible with the target database. AWS Database Migration Service (DMS) performs the actual data migration from on-premises databases to Amazon RDS.\n\n \u274c **A.** Migration Evaluator and **B.** Application Migration Service are not used for database migration. **E.** DataSync is for file-based transfers, not database workloads.\n\n ### \ud83c\udfaf **Final Answer**\n\n\u2714\ufe0f **C. Use the AWS Schema Conversion Tool (AWS SCT) to analyze the source databases for changes that are required.**\n **D. Use AWS Database Migration Service (AWS DMS) to migrate the source databases to Amazon RDS.**",
+        "Options": [
+            "A. Use Migration Evaluator Quick Insights to analyze the source databases and to identify the stored procedures that need to be migrated.",
+            "B. Use AWS Application Migration Service to analyze the source databases and to identify the stored procedures that need to be migrated.",
+            "C. Use the AWS Schema Conversion Tool (AWS SCT) to analyze the source databases for changes that are required.",
+            "D. Use AWS Database Migration Service (AWS DMS) to migrate the source databases to Amazon RDS.",
+            "E. Use AWS DataSync to migrate the data from the source databases to Amazon RDS."
+        ],
+        "QuestionText": "A company needs to migrate its on-premises Microsoft SQL Server, MySQL, and Oracle databases to Amazon RDS. Some databases have custom schemas and stored procedures. Which combination of steps should the company take for the migration? (Choose2)",
+        "QuestionID": "302"
+    },
+    {
+        "CorrectAnswerIndices": [
+            0
+        ],
+        "Identifier": "Question 847",
+        "ExamID": "SAP-C09",
+        "Explanation": "In this case the answer is:\n **A. Use AWS Systems Manager to manage patches on the on-premises servers and EC2 instances. Use Systems Manager to generate patch compliance reports.**\nAWS Systems Manager provides a unified user interface to manage patching for both on-premises servers and EC2 instances. It can generate patch compliance reports that show the status of all managed instances. AWS OpsWorks is primarily used for application deployment, configuration, and orchestration, not specifically for patching. Amazon EventBridge and Amazon Inspector are not designed for generating patch compliance reports in this context. AWS X-Ray is a service for debugging and analyzing performance issues in applications, not for managing patches or generating compliance reports.",
+        "Options": [
+            "A. Use AWS Systems Manager to manage patches on the on-premises servers and EC2 instances. Use Systems Manager to generate patch compliance reports.",
+            "B. Use AWS OpsWorks to manage patches on the on-premises servers and EC2 instances. Use Amazon QuickSight integration with OpsWorks to generate patch compliance reports.",
+            "C. Use an Amazon EventBridge rule to apply patches by scheduling an AWS Systems Manager patch remediation job. Use Amazon Inspector to generate patch compliance reports.",
+            "D. Use AWS OpsWorks to manage patches on the on-premises servers and EC2 instances. Use AWS X-Ray to post the patch status to AWS Systems Manager OpsCenter to generate patch compliance reports."
+        ],
+        "QuestionText": "A company needs to implement a patching process for its servers. The on-premises servers and Amazon EC2 instances use a variety of tools to perform patching. Management requires a single report showing the patch status of all the servers and instances. Which set of actions should a solutions architect take to meet these requirements?",
+        "QuestionID": "3387"
+    },
+    {
+        "CorrectAnswerIndices": [
+            0,
+            3
+        ],
+        "Identifier": "Question 847",
+        "ExamID": "SAP-C09",
+        "Explanation": "In this case the answers are:\\n\\n\n **A. Configure AWS IAM Identity Center (AWS Single Sign-On) to connect to Active Directory by using SAML 2.0. Enable automatic provisioning by using the System for Cross-domain Identity Management (SCIM) v2.0 protocol. Grant access to the AWS accounts by using attribute-based access controls (ABACs).**\\n\\n\n **D. In one of the company\u2019s AWS accounts, configure AWS Identity and Access Management (IAM) to use an OpenID Connect (OIDC) identity provider. Provision IAM roles that grant access to the AWS account for the federated users that correspond to appropriate groups in Active Directory. Grant access to the required AWS accounts by using cross-account IAM roles.**\\n\\n\nAWS IAM Identity Center (Single Sign-On) allows the company to connect to Active Directory using SAML 2.0 and manage user identities in a single location. It also supports automatic provisioning via SCIM and attribute-based access control. Alternatively, configuring IAM with an OIDC identity provider allows for federated access using IAM roles, which can be mapped to appropriate groups in Active Directory and used across multiple AWS accounts.",
+        "Options": [
+            "A. Configure AWS IAM Identity Center (AWS Single Sign-On) to connect to Active Directory by using SAML 2.0. Enable automatic provisioning by using the System for Cross-domain Identity Management (SCIM) v2.0 protocol. Grant access to the AWS accounts by using attribute-based access controls (ABACs).",
+            "B. Configure AWS IAM Identity Center (AWS Single Sign-On) by using IAM Identity Center as an identity source. Enable automatic provisioning by using the System for Cross-domain Identity Management (SCIM) v2.0 protocol. Grant access to the AWS accounts by using IAM Identity Center permission sets.",
+            "C. In one of the company\u2019s AWS accounts, configure AWS Identity and Access Management (IAM) to use a SAML 2.0 identity provider. Provision IAM users that are mapped to the federated users. Grant access that corresponds to appropriate groups in Active Directory. Grant access to the required AWS accounts by using cross-account IAM users.",
+            "D. In one of the company\u2019s AWS accounts, configure AWS Identity and Access Management (IAM) to use an OpenID Connect (OIDC) identity provider. Provision IAM roles that grant access to the AWS account for the federated users that correspond to appropriate groups in Active Directory. Grant access to the required AWS accounts by using cross-account IAM roles."
+        ],
+        "QuestionText": "A company is using an on-premises Active Directory service for user authentication. The company wants to use the same authentication service to sign in to the company\u2019s AWS accounts, which are using AWS Organizations. AWS Site-to-Site VPN connectivity already exists between the on-premises environment and all the company\u2019s AWS accounts.\n\nThe company\u2019s security policy requires conditional access to the accounts based on user groups and roles. User identities must be managed in a single location. Which solution will meet these requirements? (Choose2)",
+        "QuestionID": "3884"
+    },
+    {
+        "CorrectAnswerIndices": [
+            1,
+            2
+        ],
+        "Identifier": "Question 847",
+        "ExamID": "SAP-C09",
+        "Explanation": "\u2705\n\n **B. Deploy a new API Gateway API and Lambda functions in another Region. Change the Route 53 DNS record to a multivalue answer. Add both API Gateway APIs to the answer. Enable target health monitoring. Convert the DynamoDB tables to global tables.**\n\n **C. Deploy a new API Gateway API and Lambda functions in another Region. Change the Route 53 DNS record to a failover record. Enable target health monitoring. Convert the DynamoDB tables to global tables.**\n\n To achieve failover to a different AWS Region, you need to deploy the API Gateway and Lambda functions in the new Region and configure Route 53 to handle failover. Using multivalue answers or failover records in Route 53 allows for DNS-based failover. Additionally, converting DynamoDB tables to global tables ensures data consistency and availability across Regions.\n\n \u274c **A.** Edge-optimized API endpoints do not inherently provide failover capabilities. **D.** Lambda functions do not have a 'global functions' feature; global tables for DynamoDB are required for data consistency across Regions.\n\n### \ud83c\udfaf **Final Answer**\n\n\u2714\ufe0f **B. Deploy a new API Gateway API and Lambda functions in another Region. Change the Route 53 DNS record to a multivalue answer. Add both API Gateway APIs to the answer. Enable target health monitoring. Convert the DynamoDB tables to global tables.**\n **C. Deploy a new API Gateway API and Lambda functions in another Region. Change the Route 53 DNS record to a failover record. Enable target health monitoring. Convert the DynamoDB tables to global tables.**",
+        "Options": [
+            "A. Deploy a new set of Lambda functions in a new Region. Update the API Gateway API to use an edge-optimized API endpoint with Lambda functions from both Regions as targets. Convert the DynamoDB tables to global tables.",
+            "B. Deploy a new API Gateway API and Lambda functions in another Region. Change the Route 53 DNS record to a multivalue answer. Add both API Gateway APIs to the answer. Enable target health monitoring. Convert the DynamoDB tables to global tables.",
+            "C. Deploy a new API Gateway API and Lambda functions in another Region. Change the Route 53 DNS record to a failover record. Enable target health monitoring. Convert the DynamoDB tables to global tables.",
+            "D. Deploy a new API Gateway API in a new Region. Change the Lambda functions to global functions. Change the Route 53 DNS record to a multivalue answer. Add both API Gateway APIs to the answer. Enable target health monitoring. Convert the DynamoDB tables to global tables."
+        ],
+        "QuestionText": "A company is providing weather data over a REST-based API to several customers. The API is hosted by Amazon API Gateway and is integrated with different AWS Lambda functions for each API operation. The company uses Amazon Route 53 for DNS and has created a resource record of weather.example.com. The company stores data for the API in Amazon DynamoDB tables. The company needs a solution that will give the API the ability to fail over to a different AWS Region. Which solution will meet these requirements? (Choose 2)",
+        "QuestionID": "3885"
+    },
+    {
+        "CorrectAnswerIndices": [
+            2,
+            3
+        ],
+        "Identifier": "Question 854",
+        "ExamID": "SAP-C09",
+        "Explanation": "In this case the answers are:\n **B. Deploy a new API Gateway API and Lambda functions in another Region. Change the Route 53 DNS record to a multivalue answer. Add both API Gateway APIs to the answer. Enable target health monitoring. Convert the DynamoDB tables to global tables.**\n **C. Deploy a new API Gateway API and Lambda functions in another Region. Change the Route 53 DNS record to a failover record. Enable target health monitoring. Convert the DynamoDB tables to global tables.**\nBoth options B and C provide a suitable failover mechanism by deploying resources in another region and using Route 53's DNS failover capabilities. Option A does not provide a proper failover mechanism as it uses edge-optimized endpoints which are not designed for regional failover. Option D is incorrect because Lambda functions cannot be made global; they need to be deployed in each region where they are required.",
+        "Options": [
+            "A. Deploy a new set of Lambda functions in a new Region. Update the API Gateway API to use an edge-optimized API endpoint with Lambda functions from both Regions as targets. Convert the DynamoDB tables to global tables.",
+            "B. Deploy a new API Gateway API and Lambda functions in another Region. Change the Route 53 DNS record to a multivalue answer. Add both API Gateway APIs to the answer. Enable target health monitoring. Convert the DynamoDB tables to global tables.",
+            "C. Deploy a new API Gateway API and Lambda functions in another Region. Change the Route 53 DNS record to a failover record. Enable target health monitoring. Convert the DynamoDB tables to global tables.",
+            "D. Deploy a new API Gateway API in a new Region. Change the Lambda functions to global functions. Change the Route 53 DNS record to a multivalue answer. Add both API Gateway APIs to the answer. Enable target health monitoring. Convert the DynamoDB tables to global tables.",
+            "Onboarding OU to allow AWS Config actions. Move the organization\u2019s root SCP to the Production OU. Move the new account to the Production OU when adjustments to AWS Config are complete."
+        ],
+        "QuestionText": "A company is providing weather data over a REST-based API to several customers. The API is hosted by Amazon API Gateway and is integrated with different AWS Lambda functions for each API operation. The company uses Amazon Route 53 for DNS and has created a resource record of weather.example.com. The company stores data for the API in Amazon DynamoDB tables. The company needs a solution that will give the API the ability to fail over to a different AWS Region. Which solution will meet these requirements? (Choose 2)",
+        "QuestionID": "3971"
+    },
+    {
+        "CorrectAnswerIndices": [
+            1,
+            2
+        ],
+        "Identifier": "Question 847",
+        "ExamID": "SAP-C09",
+        "Explanation": "In this case the answers are:\n **B. Use AWS SAM and built-in AWS CodeDeploy to deploy the new Lambda version, gradually shift traffic to the new version, and use pre-traffic and post-traffic test functions to verify code. Rollback if Amazon CloudWatch alarms are triggered.**\n **D. Create and deploy an AWS CloudFormation stack that consists of a new API Gateway endpoint that references the new Lambda version. Change the CloudFront origin to the new API Gateway endpoint, monitor errors and if detected, change the AWS CloudFront origin to the previous API Gateway endpoint.**\nAWS SAM (Serverless Application Model) combined with AWS CodeDeploy allows for automated deployment of Lambda functions with traffic shifting and testing capabilities, which helps in quick detection and rollback of errors. AWS CloudFormation can be used to manage infrastructure changes in a controlled manner, allowing for quick reversion to a previous setup if errors are detected.",
+        "Options": [
+            "A. Create and deploy nested AWS CloudFormation stacks with the parent stack consisting of the AWS CloudFront distribution and API Gateway, and the child stack containing the Lambda function. For changes to Lambda, create an AWS CloudFormation change set and deploy; if errors are triggered, revert the AWS CloudFormation change set to the previous version.",
+            "B. Use AWS SAM and built-in AWS CodeDeploy to deploy the new Lambda version, gradually shift traffic to the new version, and use pre-traffic and post-traffic test functions to verify code. Rollback if Amazon CloudWatch alarms are triggered.",
+            "C. Refactor the AWS CLI scripts into a single script that deploys the new Lambda version. When deployment is completed, the script tests execute. If errors are detected, revert to the previous Lambda version.",
+            "D. Create and deploy an AWS CloudFormation stack that consists of a new API Gateway endpoint that references the new Lambda version. Change the CloudFront origin to the new API Gateway endpoint, monitor errors and if detected, change the AWS CloudFront origin to the previous API Gateway endpoint."
+        ],
+        "QuestionText": "A company has a serverless application comprised of Amazon CloudFront, Amazon API Gateway, and AWS Lambda functions. The current deployment process of the application code is to create a new version number of the Lambda function and run an AWS CLI script to update. If the new function version has errors, another CLI script reverts by deploying the previous working version of the function. The company would like to decrease the time to deploy new versions of the application logic provided by the Lambda functions, and also reduce the time to detect and revert when errors are identified. How can this be accomplished?",
+        "QuestionID": "4049"
+    },
+    {
+        "CorrectAnswerIndices": [
+            1,
+            2
+        ],
+        "Identifier": "Question 847",
+        "ExamID": "SAP-C09",
+        "Explanation": "In this case the answers are:\n **B. Create an AWS Systems Manager document with a script to copy log files to Amazon S3. Create an Auto Scaling lifecycle hook and an Amazon EventBridge rule to detect lifecycle events from the Auto Scaling group. Invoke an AWS Lambda function on the autoscaling:EC2_INSTANCE_TERMINATING transition to call the AWS Systems Manager API SendCommand operation to run the document to copy the log files and send CONTINUE to the Auto Scaling group to terminate the instance.**\n **D. Create an AWS Systems Manager document with a script to copy log files to Amazon S3. Create an Auto Scaling lifecycle hook that publishes a message to an Amazon Simple Notification Service (Amazon SNS) topic. From the SNS notification, call the AWS Systems Manager API SendCommand operation to run the document to copy the log files and send ABANDON to the Auto Scaling group to terminate the instance.**\nBoth B and D are valid because they involve using AWS Systems Manager to execute a script that copies log files to S3 before the instance terminates. B uses an EventBridge rule and Lambda function, while D uses an SNS topic to trigger the Systems Manager command. These methods ensure that log files are copied before the instance is terminated.",
+        "Options": [
+            "A. Create a script to copy log files to Amazon S3, and store the script in a file on the EC2 instance. Create an Auto Scaling lifecycle hook and an Amazon EventBridge rule to detect lifecycle events from the Auto Scaling group. Invoke an AWS Lambda function on the autoscaling:EC2_INSTANCE_TERMINATING transition to send ABANDON to the Auto Scaling group to prevent termination, run the script to copy the log files, and terminate the instance using the AWS SDK.",
+            "B. Create an AWS Systems Manager document with a script to copy log files to Amazon S3. Create an Auto Scaling lifecycle hook and an Amazon EventBridge rule to detect lifecycle events from the Auto Scaling group. Invoke an AWS Lambda function on the autoscaling:EC2_INSTANCE_TERMINATING transition to call the AWS Systems Manager API SendCommand operation to run the document to copy the log files and send CONTINUE to the Auto Scaling group to terminate the instance.",
+            "C. Change the log delivery rate to every 5 minutes. Create a script to copy log files to Amazon S3, and add the script to EC2 instance user data. Create an Amazon EventBridge rule to detect EC2 instance termination. Invoke an AWS Lambda function from the EventBridge rule that uses the AWS CLI to run the user-data script to copy the log files and terminate the instance.",
+            "D. Create an AWS Systems Manager document with a script to copy log files to Amazon S3. Create an Auto Scaling lifecycle hook that publishes a message to an Amazon Simple Notification Service (Amazon SNS) topic. From the SNS notification, call the AWS Systems Manager API SendCommand operation to run the document to copy the log files and send ABANDON to the Auto Scaling group to terminate the instance."
+        ],
+        "QuestionText": "A company is running an application on several Amazon EC2 instances in an Auto Scaling group behind an Application Load Balancer. The load on the application varies throughout the day, and EC2 instances are scaled in and out on a regular basis. Log files from the EC2 instances are copied to a central Amazon S3 bucket every 15 minutes. The security team discovers that log files are missing from some of the terminated EC2 instances.\n\nWhich set of actions will ensure that log files are copied to the central S3 bucket from the terminated EC2 instances? (Choose 2)",
+        "QuestionID": "4362"
+    },
+    {
+        "CorrectAnswerIndices": [
+            2,
+            3
+        ],
+        "Identifier": "Question 735",
+        "ExamID": "SAP-C09",
+        "Explanation": "To provide a consistent user experience and allow both the application and database tiers to scale, the solution should use Aurora Auto Scaling for Aurora Replicas to handle read traffic efficiently. An Application Load Balancer (ALB) with the round robin routing algorithm and sticky sessions enabled ensures that requests from the same user are directed to the same instance, maintaining session consistency. Option A is incorrect because a Network Load Balancer does not support sticky sessions. Option B is incorrect because Aurora Auto Scaling is typically used for Replicas, not writers, to handle read traffic. Option D is incorrect for the same reason as Option B and additionally because a Network Load Balancer is not suitable for this scenario.",
+        "Options": [
+            "A. Enable Aurora Auto Scaling for Aurora Replicas. Use a Network Load Balancer with the least outstanding requests routing algorithm and sticky sessions enabled.",
+            "B. Enable Aurora Auto Scaling for Aurora writers. Use an Application Load Balancer with the round robin routing algorithm and sticky sessions enabled.",
+            "C. Enable Aurora Auto Scaling for Aurora Replicas. Use an Application Load Balancer with the round robin routing and sticky sessions enabled.",
+            "D. Enable Aurora Scaling for Aurora writers. Use a Network Load Balancer with the least outstanding requests routing algorithm and sticky sessions enabled."
+        ],
+        "QuestionText": "A company is running a two-tier web-based application in an on-premises data center. The application layer consists of a single server running a stateful application. The application connects to a PostgreSQL database running on a separate server. The application\u2019s user base is expected to grow significantly, so the company is migrating the application and database to AWS. The solution will use Amazon Aurora PostgreSQL, Amazon EC2 Auto Scaling, and Elastic Load Balancing. Which solution will provide a consistent user experience that will allow the application and database tiers to scale? (Choose2)",
+        "QuestionID": "4466"
+    },
+    {
+        "CorrectAnswerIndices": [
+            0,
+            3
+        ],
+        "Identifier": "Question 847",
+        "ExamID": "SAP-C09",
+        "Explanation": "In this case the answers are:\n **A. Provision a Direct Connect gateway. Delete the existing private virtual interface from the existing connection. Create the second Direct Connect connection. Create a new private virtual interface on each connection, and connect both private virtual interfaces to the Direct Connect gateway. Connect the Direct Connect gateway to the single VPC.**\n **D. Provision a transit gateway. Delete the existing private virtual interface from the existing connection. Create the second Direct Connect connection. Create a new private virtual interface on each connection, and connect both private virtual interfaces to the transit gateway. Associate the transit gateway with the single VPC.**\nA Direct Connect gateway allows multiple Direct Connect connections to be aggregated and provides connectivity to multiple VPCs across different regions. A transit gateway also allows multiple Direct Connect connections to be aggregated and provides connectivity to multiple VPCs across different regions. Both options A and D meet the requirements for redundancy and connectivity to other regions. Option B does not provide redundancy or connectivity to other regions. Option C is incorrect because a public virtual interface is used for accessing public AWS services, not for private connectivity to a VPC.",
+        "Options": [
+            "A. Provision a Direct Connect gateway. Delete the existing private virtual interface from the existing connection. Create the second Direct Connect connection. Create a new private virtual interface on each connection, and connect both private virtual interfaces to the Direct Connect gateway. Connect the Direct Connect gateway to the single VPC.",
+            "B. Keep the existing private virtual interface. Create the second Direct Connect connection. Create a new private virtual interface on the new connection, and connect the new private virtual interface to the single VPC.",
+            "C. Keep the existing private virtual interface. Create the second Direct Connect connection. Create a new public virtual interface on the new connection, and connect the new public virtual interface to the single VPC.",
+            "D. Provision a transit gateway. Delete the existing private virtual interface from the existing connection. Create the second Direct Connect connection. Create a new private virtual interface on each connection, and connect both private virtual interfaces to the transit gateway. Associate the transit gateway with the single VPC."
+        ],
+        "QuestionText": "A company with global offices has a single 1 Gbps AWS Direct Connect connection to a single AWS Region. The company\u2019s on-premises network uses the connection to communicate with the company\u2019s resources in the AWS Cloud. The connection has a single private virtual interface that connects to a single VPC. \n\nA solutions architect must implement a solution that adds a redundant Direct Connect connection in the same Region. The solution also must provide connectivity to other Regions through the same pair of Direct Connect connections as the company expands into other Regions. Which solution meets these requirements? \n\nA. Provision a Direct Connect gateway. Delete the existing private virtual interface from the existing connection. Create the second Direct Connect connection. Create a new private virtual interface on each connection, and connect both private virtual interfaces to the Direct Connect gateway. Connect the Direct Connect gateway to the single VPC. \n\nB. Keep the existing private virtual interface. Create the second Direct Connect connection. Create a new private virtual interface on the new connection, and connect the new private virtual interface to the single VPC. \n\nC. Keep the existing private virtual interface. Create the second Direct Connect connection. Create a new public virtual interface on the new connection, and connect the new public virtual interface to the single VPC. \n\nD. Provision a transit gateway. Delete the existing private virtual interface from the existing connection. Create the second Direct Connect connection. Create a new private virtual interface on each connection, and connect both private virtual interfaces to the transit gateway. Associate the transit gateway with the single VPC.",
+        "QuestionID": "4536"
+    },
+    {
+        "CorrectAnswerIndices": [
+            0,
+            3,
+            5
+        ],
+        "Identifier": "Question 847",
+        "ExamID": "SAP-C09",
+        "Explanation": "In this case the answers are:\n **A. Use an Elastic Load Balancer to distribute traffic across multiple EC2 instances. Ensure that the EC2 instances are part of an Auto Scaling group that has a minimum capacity of two instances.**\n **D. Modify the DB instance to create a Multi-AZ deployment that extends across two Availability Zones.**\n **F. Create a replication group for the ElastiCache for Redis cluster. Enable Multi-AZ on the cluster.**\n\n**A.** Using an Elastic Load Balancer (ELB) with an Auto Scaling group ensures that traffic is distributed across multiple EC2 instances, providing redundancy and automatic scaling based on demand. This setup helps maintain application availability during failures.\n\n**D.** A Multi-AZ deployment for an Amazon RDS DB instance automatically provisions a standby instance in a different Availability Zone. In the event of a failure, Amazon RDS automatically fails over to the standby, minimizing downtime.\n\n**F.** Enabling Multi-AZ on an ElastiCache for Redis cluster creates a replication group with a primary and a standby node in different Availability Zones. This configuration ensures high availability and automatic failover, reducing the risk of data loss and downtime.",
+        "Options": [
+            "A. Use an Elastic Load Balancer to distribute traffic across multiple EC2 instances. Ensure that the EC2 instances are part of an Auto Scaling group that has a minimum capacity of two instances.",
+            "B. Use an Elastic Load Balancer to distribute traffic across multiple EC2 instances. Ensure that the EC2 instances are configured in unlimited mode.",
+            "C. Modify the DB instance to create a read replica in the same Availability Zone. Promote the read replica to be the primary DB instance in failure scenarios.",
+            "D. Modify the DB instance to create a Multi-AZ deployment that extends across two Availability Zones.",
+            "E. Create a replication group for the ElastiCache for Redis cluster. Configure the cluster to use an Auto Scaling group that has a minimum capacity of two instances.",
+            "F. Create a replication group for the ElastiCache for Redis cluster. Enable Multi-AZ on the cluster."
+        ],
+        "QuestionText": "A company is hosting a critical application on a single Amazon EC2 instance. The application uses an Amazon ElastiCache for Redis single-node cluster for an in-memory data store. The application uses an Amazon RDS for MariaDB DB instance for a relational database. For the application to function, each piece of the infrastructure must be healthy and must be in an active state. \n\nA solutions architect needs to improve the application's architecture so that the infrastructure can automatically recover from failure with the least possible downtime. Which combination of steps will meet these requirements? (Choose three.)",
+        "QuestionID": "4564"
+    },
+    {
+        "CorrectAnswerIndices": [
+            3
+        ],
+        "Identifier": "Question 500",
+        "ExamID": "SAP-C09",
+        "Explanation": "**C**\nProvisioned concurrency eliminates cold starts during peaks. Consistent 12-month RDS usage is best cost-optimized with Reserved Instances. AWS WAF on CloudFront provides managed rules that block SQL injection and common web exploits. \n\n**Shield Advanced** focuses on DDoS, not application-layer exploits. \n**Redshift** is not for OLTP. Increasing timeouts or memory does not address cold starts or security.",
+        "Options": [
+            "A. Configure the Lambda functions to have an increased timeout value during peak periods. Use RDS Reserved Instances for the database. Use CloudFront and subscribe to AWS Shield Advanced to protect against the SQL injection and web exploit attempts.",
+            "B. Increase the memory of the Lambda functions. Transition to Amazon Redshift for the database. Integrate Amazon Inspector with CloudFront to protect against the SQL injection and web exploit attempts.",
+            "C. Use Lambda functions with provisioned concurrency for compute during peak periods. Transition to Amazon Aurora Serverless for the database. Use CloudFront and subscribe to AWS Shield Advanced to protect against the SQL injection and web exploit attempts.",
+            "D. Use Lambda functions with provisioned concurrency for compute during peak periods. Use RDS Reserved Instances for the database. Integrate AWS WAF with CloudFront to protect against the SQL injection and web exploit attempts."
+        ],
+        "QuestionText": "A company runs a static S3 website behind CloudFront. API Gateway invokes Lambda for requests and order processing. Lambda stores data in an Amazon RDS for MySQL DB cluster using On-Demand instances. Traffic is consistent over 12 months. The site has seen SQL injection and web exploit attempts. During peaks, order processing slows and Lambdas have cold starts. The company needs scalability, low-latency at peaks, database cost optimization, and protection against these exploits. Which solution meets the requirements?",
+        "QuestionID": "500"
+    },
+    {
+        "CorrectAnswerIndices": [
+            3
+        ],
+        "Identifier": "Question 501",
+        "ExamID": "SAP-C09",
+        "Explanation": "Warm pools pre-initialize instances so scale-out adds capacity with minimal latency. Use lifecycle hooks to run and complete user data initialization before instances enter InService. Dynamic scaling reacts to actual load. Predictive scaling is optional and not required here. Instance maintenance policy is unrelated to running user data, and setting instance warmup to 0 seconds is unsafe.",
+        "Options": [
+            "A. Use a predictive scaling policy. Use an instance maintenance policy to run the user data script. Set the default instance warmup time to 0 seconds.",
+            "B. Use a dynamic scaling policy. Use lifecycle hooks to run the user data script. Set the default instance warmup time to 0 seconds.",
+            "C. Use a predictive scaling policy. Enable warm pools for the Auto Scaling group. Use an instance maintenance policy to run the user data script.",
+            "D. Use a dynamic scaling policy. Enable warm pools for the Auto Scaling group. Use lifecycle hooks to run the user data script."
+        ],
+        "QuestionText": "A company runs a web application on a single Amazon EC2 instance. During peaks CPU >95% and launching new instances takes minutes due to user data installing custom packages. The company will move to an Auto Scaling group with mixed instances and a launch template. They must reduce application latency when new instances are launched during auto scaling. Which solution meets the requirements?",
+        "QuestionID": "501"
+    },
+    {
+        "CorrectAnswerIndices": [
+            2,
+            3
+        ],
+        "Identifier": "Question 502",
+        "ExamID": "SAP-C09",
+        "Explanation": "AWS Schema Conversion Tool (SCT) analyzes source databases and converts schema, functions, and stored procedures to be compatible with the target database. AWS Database Migration Service (DMS) performs the actual data migration from on-premises databases to Amazon RDS. Migration Evaluator and Application Migration Service are not used for database migration. DataSync is for file-based transfers, not database workloads.",
+        "Options": [
+            "A. Use Migration Evaluator Quick Insights to analyze the source databases and to identify the stored procedures that need to be migrated.",
+            "B. Use AWS Application Migration Service to analyze the source databases and to identify the stored procedures that need to be migrated.",
+            "C. Use the AWS Schema Conversion Tool (AWS SCT) to analyze the source databases for changes that are required.",
+            "D. Use AWS Database Migration Service (AWS DMS) to migrate the source databases to Amazon RDS.",
+            "E. Use AWS DataSync to migrate the data from the source databases to Amazon RDS."
+        ],
+        "QuestionText": "A company needs to migrate its on-premises Microsoft SQL Server, MySQL, and Oracle databases to Amazon RDS. Some databases have custom schemas and stored procedures. Which combination of steps should the company take for the migration? (Choose2)",
+        "QuestionID": "502"
+    }
+]

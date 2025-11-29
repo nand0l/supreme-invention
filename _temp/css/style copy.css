@@ -1,0 +1,340 @@
+html, body {
+    min-height: 100%;
+    margin: 0;
+    font-family: 'Amazon Ember', sans-serif;
+    /* https://www.cdnfonts.com/amazon-ember.font */
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #f2f2f2;
+    text-align: left;
+    background-color: grey;
+    background: linear-gradient( to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(0, 0, 0, 0.15) 100% ), radial-gradient( at top center, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 120% ) #989898;
+    background-blend-mode: multiply, multiply;
+  }
+  a:link {
+    text-decoration: none;
+    color: #e69600;
+  }
+  a:visited {
+    text-decoration: none;
+    color: orange;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: orange;
+  }
+  a:active {
+    text-decoration: underline;
+    color: orange;
+  }
+  .form-control:focus {
+    color: orange;
+  }
+  .md-form:focus {
+    color: orange;
+    border-bottom: 1px solid orange;
+  }
+  .label {
+    color: orange;
+  }
+  hr {
+    border: 1px solid #9e9e9e;
+  }
+  H1, H2, h3, h4, h5, h6 {
+    color: #ffa500;
+  }
+  .col-sm{
+    font-weight: 100;
+    font-size: 1.2rem;
+  }
+  #home {
+    text-align: center;
+  }
+  #Webform-org{
+    height: 100vh;
+  }
+  header {
+    position: relative;
+  }
+  .title {
+    font-weight: 700;
+    text-align: center !important;
+    text-transform: uppercase;
+  }
+  .about {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  .container-fully {
+
+    min-height: 100vh;
+  }
+  .container-full {
+    background-color: grey;
+    min-height: 100vh;
+  }
+  label.label {
+    color: #d9d9d9;
+  }
+  pre {
+    color: #d9d9d9;
+  }
+  table{
+    width: 100%;
+    color: #d9d9d9;
+
+  }
+  table, th,td,tr{
+    border: 0px solid black;
+  }
+  .table-25 {
+    width: 25%;
+    color: #d9d9d9;
+    text-align: center;
+  }
+  .td-center {
+    text-align: center;
+    vertical-align: middle;
+  }
+  .td-left {
+    text-align: left;
+    vertical-align: middle;
+  }
+  .td-left-15 {
+    padding-left: 15pt;
+  }
+  .td-left-15 {
+    padding-left: 15pt;
+  }
+  .td-122 {
+    width: 122px;
+  }
+  .td-right {
+    text-align: right;
+    vertical-align: middle;
+  }
+  .td-right-15 {
+    padding-right: 15pt;
+  }
+
+  .td-right-comment {
+    text-align: left;
+    vertical-align: top;
+  }
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .rotated45 {
+    transform: rotate(45deg);
+  }
+  .rotaded315 {
+    transform: rotate(315deg);
+  }
+  th {
+    color: #ffa500;
+    text-align: center;
+  }
+  li.no-bullets {
+    list-style-type: none;
+   /* Remove bullets */
+    padding: 0;
+   /* Remove padding */
+    margin: 0;
+   /* Remove margins */
+  }
+  /* The Modal (background) */
+  .modal {
+    display: none;
+   /* Hidden by default */
+    position: fixed;
+   /* Stay in place */
+    z-index: 1;
+   /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+   /* Full width */
+    height: 100%;
+   /* Full height */
+    overflow: auto;
+   /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+   /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+   /* Black w/ opacity */
+  }
+  #BackBtn {
+    display: none;
+   /* Hidden by default */
+    position: fixed;
+   /* Fixed/sticky position */
+    bottom: 20px;
+   /* Place the button at the bottom of the page */
+    right: 30px;
+   /* Place the button 30px from the right */
+    z-index: 99;
+   /* Make sure it does not overlap */
+    border: none;
+   /* Remove borders */
+    outline: none;
+   /* Remove outline */
+    background-color: #ffa500;
+   /* Set a background color */
+    color: white;
+   /* Text color */
+    cursor: pointer;
+   /* Add a mouse pointer on hover */
+    padding: 15px;
+   /* Some padding */
+    border-radius: 10px;
+   /* Rounded corners */
+    font-size: 18px;
+   /* Increase font size */
+  }
+  #BackBtn:hover {
+    background-color: #555;
+   /* Add a dark-grey background on hover */
+  }
+  #preview {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  #img_container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  pre,code {
+    color: #e5e5e5;
+    background: #000;
+  }
+  code span{
+    color: #e83e8c;
+}
+.codehilite{
+  margin-top: 20px;
+}
+
+  .btn{
+    color: #989898;
+  }
+  audio {
+    filter: sepia(10%) saturate(20%) grayscale(0) contrast(99%) invert(12%);
+    width: 300px;
+    height: 40px;
+  }
+  .ml-auto, mx-auto{
+    margin-left: auto!important;
+  }
+  table, th, tr, td {
+    text-align: left;
+  }
+  .col1 {
+    column-width: 100px;
+  }
+  .countdown{
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 20px;
+    }
+    #endtime{
+    padding: 5px;
+    width: 200px;
+    font-size: 24px;
+    }
+    .inputbox {
+      width:200px;
+      padding:20px;
+    }
+    .countdown-content{
+    padding: 10px;
+    border-radius: 3px;
+    background: #4c4c4c;
+    display: inline-block;
+    }
+    .countdown-content span{
+    padding: 15px;
+    border-radius: 3px;
+    background: orange;
+    display: inline-block;
+    }
+    .btn{
+    display: block;
+    padding: 3px 20px;
+    margin:10px auto;
+    outline: none;
+    border: none;
+    background: orange;
+    font-size: 20px;
+    font-weight: bold;
+    color: #232425 !important;
+    cursor: pointer;
+    width: 240px;
+    }
+    .btn-small{
+      display: block;
+      outline: none;
+      border: none;
+      border-radius: 10px;
+      background: orange;
+      font-size: 20px;
+      font-weight: bold;
+      color: #232425 !important;
+      cursor: pointer;
+      width: 120px;
+      }
+  
+  .input{
+    display: block;
+    padding: 3px 20px;
+    margin:10px auto;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #232425 !important;
+    text-align: center; 
+    width: 240px;
+  }
+  
+  .output{
+    display: block;
+    padding: 3px 20px;
+    margin:10px auto;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: #232425 !important;
+    width: 240px;
+  }
+  
+    #tminus {
+      width: 300px;
+      margin-bottom: 7px;
+      font-size: 50px;
+      border: 0;
+      padding: 5px 7px;
+      background-color: grey;
+      color: #ffa500;
+      text-align: center;
+      }
+  .countdown{
+    display: flex;
+    justify-content: center;
+  }
+  ::placeholder {
+    text-align: center; 
+  }

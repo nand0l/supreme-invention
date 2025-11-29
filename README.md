@@ -32,11 +32,16 @@ git init
 git add .
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/nand0l/my-website-demo.git
+
+
+git remote add origin https://github.com/nand0l/supreme-invention.git
+git remote add origin 
 git push -u origin main
 ```
 
 ## local build test
+
+The loca folder is: `C:\code\docusaurus\supreme-invention`
 
 ```bash
 npm run build

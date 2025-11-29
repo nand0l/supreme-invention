@@ -248,3 +248,23 @@ pre code {
 .card {
   background-color: aliceblue;
 }
+
+/* Make rendered markdown width pleasant inside cards */
+.markdown-body {
+  max-width: 75ch;
+}
+
+/* Ensure textareas fit the design nicely */
+textarea {
+  border-radius: var(--ifm-global-radius);
+  padding: .75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+}
+
+textarea:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ifm-color-primary) 20%, transparent);
+}
