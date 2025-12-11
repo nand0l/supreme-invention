@@ -1,0 +1,14 @@
+---
+title: Nova Prompt Tool v2
+description: Submit summaries and get clean Markdown back from Bedrock Nova.
+sidebar_position: 2
+---
+
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import NovaPromptTool from '@site/src/components/NovaPromptTool02';
+
+> Use this tool to turn a short summary into a full, student-ready article in Markdown.
+
+<BrowserOnly fallback={<div>Loading…</div>}>
+  {() => <NovaPromptTool apiEndpoint="https://q273ry0qui.execute-api.us-east-1.amazonaws.com/prod/nova" />}
+</BrowserOnly>

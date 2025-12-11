@@ -40,14 +40,61 @@
 
         <details>
             <summary>View Model Specifications</summary>
-            <textarea id="prompt" rows="10">You are an expert educational content writer. I will provide a summary with some bullet points. Your task is to rewrite it into a full-length article that can be included in a student syllabus module. The tone should be educational, clear, and supportive.
+            <textarea id="prompt" rows="10">
+You are an AWS expert and you need to answer amultplecoice question, you cannot make any assumptions, everything not
+mentioned is default.
+I expect a response in 2 parts:
+- I want you to identify and repeat the correct answer
+- I want detailed explanation
+- I need the response in the following format:
+{
+"ExamID": {
+"S": "SAP-C02"
+},
+"QuestionID": {
+"S": "1"
+},
+"CorrectAnswerIndices": {
+"L": [
+{
+"N": "0"
+}
+]
+},
+"Explanation": {
+"S": "The answer **"A. Amazon Kinesis Data Streams"** is correct.\n\nKinesis Data Streams is designed for real-time streaming data ingestion, making it ideal for IoT scenarios. AWS
+Glue is used for ETL (Extract, Transform, Load), while Redshift and RDS are more for structured data storage."
+},
+"Identifier": {
+"S": "Question 1"
+},
+"Options": {
+"L": [
+{
+"S": "A. Amazon Kinesis Data Streams"
+},
+{
+"S": "B. AWS Glue"
+},
+{
+"S": "C. Amazon Redshift"
+},
+{
+"S": "D. Amazon RDS"
+}
+]
+},
+"QuestionText": {
+"S": "Which AWS service is best suited for real-time data ingestion from IoT devices? "
+}
+}
+In CorrectAnswerIndices we announce the corrcet items from te list of Options, 
+in this case we have only one correct answer, so we have only one item in the list. 
+It make sure the ultimate value is always a nummeric value so where the answer is B the value will be 1
 
-If any complex or technical terms are used, explain them in simple language suitable for students with mixed backgrounds. Use only ASCII characters and format the response in clean, readable Markdown. Structure the output with appropriate headings, subheadings, paragraphs, and bullet points.
-
-Start the article with a short introduction and end with a summary or reflection section.
-The markdown header for your output should be "##" because the first header is already used for the title.
-Here is the summary:
-</textarea>
+In Options we have the list of all possible answers, in this case we have 4 options.
+From this list we need to select the correct option or options if the question text refers to multiple answers
+            </textarea>
         </details>
 
         <label for="input">Enter your summary or bullet points:</label>

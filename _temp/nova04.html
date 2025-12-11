@@ -40,14 +40,21 @@
 
         <details>
             <summary>View Model Specifications</summary>
-            <textarea id="prompt" rows="10">You are an expert educational content writer. I will provide a summary with some bullet points. Your task is to rewrite it into a full-length article that can be included in a student syllabus module. The tone should be educational, clear, and supportive.
-
-If any complex or technical terms are used, explain them in simple language suitable for students with mixed backgrounds. Use only ASCII characters and format the response in clean, readable Markdown. Structure the output with appropriate headings, subheadings, paragraphs, and bullet points.
-
-Start the article with a short introduction and end with a summary or reflection section.
-The markdown header for your output should be "##" because the first header is already used for the title.
-Here is the summary:
-</textarea>
+            <textarea id="prompt" rows="10">
+                I will paste raw text, in this raw text there are multiple multiple choice questions,
+                I want you to extract the questions and answers, and then reformat them into a markdown formatted file.
+                Do not include the answers in the markdown file.
+                Do not include any other text in the markdown file.
+                The markdown file should have the following format:
+                # 
+                ## question
+                question text
+                ## options
+                - option 1
+                - option 2
+                - option 3
+                - option 4
+            </textarea>
         </details>
 
         <label for="input">Enter your summary or bullet points:</label>

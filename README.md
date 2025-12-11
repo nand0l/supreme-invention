@@ -51,4 +51,6 @@ This command generates static content into the `build` directory and can be serv
 
 ## Deployment
 
-I will use AWS Amplify to host this app
+I will use AWS Amplify to host this app on: <https://main.d2p4jnd4jj8v26.amplifyapp.com/>
+
+<https://946997026676.eu-west-3.console.aws.amazon.com/amplify/apps/d2p4jnd4jj8v26/overview>
