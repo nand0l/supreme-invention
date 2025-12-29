@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import { NOVA_MODELS, DEFAULT_NOVA_MODEL } from './novaModels';
 
 type Props = {
     apiEndpoint: string; // e.g., "https://q273ry0qui.execute-api.us-east-1.amazonaws.com/prod/nova"
@@ -14,7 +15,7 @@ Here is the question:
 `;
 
 export default function NovaPromptTool({ apiEndpoint }: Props) {
-    const [model, setModel] = useState('amazon.nova-pro-v1:0');
+    const [model, setModel] = useState(DEFAULT_NOVA_MODEL);
     const [scriptPrompt, setScriptPrompt] = useState(DEFAULT_SCRIPT);
     const [userInput, setUserInput] = useState('');
     const [loading, setLoading] = useState(false);
@@ -73,10 +74,7 @@ export default function NovaPromptTool({ apiEndpoint }: Props) {
                             <div className="margin-bottom--sm">
                                 <label htmlFor="model" className="margin-right--sm"><strong>Choose a model:</strong></label>
                                 <select id="model" className="margin-bottom--sm" value={model} onChange={(e) => setModel(e.target.value)}>
-                                    <option value="amazon.nova-pro-v1:0">amazon.nova-pro-v1:0</option>
-                                    <option value="us.amazon.nova-lite-v1:0">us.amazon.nova-lite-v1:0</option>
-                                    <option value="us.amazon.nova-micro-v1:0">us.amazon.nova-micro-v1:0</option>
-                                    <option value="us.amazon.nova-premier-v1:0">us.amazon.nova-premier-v1:0</option>
+                                    {NOVA_MODELS.map(m => <option key={m.value} value={m.value}>{m.label}</option>)}
                                 </select>
                             </div>
 

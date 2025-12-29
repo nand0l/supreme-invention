@@ -70,7 +70,7 @@ export default function NovaPromptTool({ apiEndpoint }: Props) {
         <div className="container padding-vert--lg">
             <div className="row">
                 <div className="col col--12">
-                    <h1>Amazon Bedrock — Nova Prompt</h1>
+                    <h1>Amazon Bedrock — Nova Prompt v3</h1>
                     <div className="card">
                         <div className="card__body">
                             <div className="margin-bottom--sm">
